@@ -1,6 +1,9 @@
 .counter {
-  border: 1px solid #ccc;
-  border-radius: 5px;
-  padding: 2px 6px;
+  background-color: #cee4fe;
+  color:#328ef7;
+  border-radius: 8px;
+  padding: .75rem 1rem;
+  font-size: small;
+  font-weight: 400;
   margin: 12px 0 0;
 }
