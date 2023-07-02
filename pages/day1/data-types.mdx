@@ -1,0 +1,218 @@
+import { Callout } from "nextra-theme-docs";
+
+## Ma'lumotlar turlariga (Data types) kirish
+
+JavaScript va boshqa dasturlash tillarida ma'lumotlar har xil turlari mavjud. Javascriptda mavjud bo'lgan ma'lumot turlari: _String, Number, Boolean, undefined, Null_, and _Symbol_.
+
+### Numbers | Sonlar
+
+- Butun sonlar: butun (manfiy, nol va musbat) sonlar
+  Misol:
+  ... -3, -2, -1, 0, 1, 2, 3 ...
+- kasr sonlar: o'nlik sonlar
+  Misol
+  ... -3.5, -2.25, -1.0, 0.0, 1.1, 2.2, 3.5 ...
+
+### Strings
+
+Bir yoki undan ko'p belgida tashkil topgan va "qo'sh tirnoq", 'bir tirnoq' va backtick ichidagi to'plam
+
+**Misol:**
+
+```js copy
+"a";
+"Uzbekiston";
+"Real Madrid";
+"Finlandiya";
+"JavaScript chiroyli dasturlash tili";
+"Men dars berishni yaxshi ko'raman";
+"Umid qilamanki, birinchi kun sizga yoqadi"`Shuningdek, biz backtick yordamida string yaratishimiz mumkin`;
+("Satr bitta belgi yoki bir nechta sahifalarcha katta bo'lishi mumkin");
+("Satr bitta belgi yoki bir nechta sahifalarcha katta bo'lishi mumkin");
+```
+
+### Booleans
+
+Boolean `True` yoki `False` dan tashkil topgan ma'lumot turi. Har qanday mantiqiy taqqoslash qiymati `True` yoki `False` qaytaradi.
+
+A boolean data type is either a true or false value.
+
+**Misol:**
+
+```js copy
+true; // agar chiroq yoqilgan bo'lsa, qiymat true bo'ladi
+false; //  agar chiroq o'chiq bo'lsa, qiymat false bo'ladi
+```
+
+### Undefined | Aniqlanmagan
+
+JavaScriptda, agar biz o'zgaruvchiga qiymat bermasak, qiymat undefinedga teng bo'ladi. Bunga qo'shimcha ravishda, agar funktsiya hech narsa qaytarmasa, u undefined holda qaytariladi.
+
+```js copy
+let Ism;
+console.log(Ism); // undefined, chunki hech qanday qiymat berilmagan.
+```
+
+### Null
+
+JavaScriptda null bo'sh qiymatni bildiradi.
+
+```js copy
+let boshQiymat = null;
+```
+
+<Callout type="warning" emoji="⚠️">
+  Agar `undefined` bilan `null` ni biroz chalkashrib yuborgan bo'lsangiz sizga
+  misol bilan tushuntiraman. Tasavvur qiing bizda bo'sh quti bor bu `null`
+  degani ammo ichi bo'sh, agar o'sh qutini raqamlar bilan to'dirsak uning
+  qiymati `number` ga teng bo'ladi. `Undefined` esa biz takidlagan qutini o'zi
+  ham yo'q degani yani aniqlanmagan.
+</Callout>
+
+## Checking Data Types | Tekshiruvchi ma'lumotlar turlari
+
+Qanday ma'lumot turiga tegishli ekanligini **typeof** operatori orqali tekshiramiz. Misol.
+
+```js copy
+console.log(typeof "tashkent"); // string
+console.log(typeof 5); // number
+console.log(typeof true); // boolean
+console.log(typeof null); // object type
+console.log(typeof undefined); // undefined
+```
+
+## Comments | Yana Sharhlar
+
+JavaScript-da sharhlash boshqa dasturlash tillariga o'xshashligini unutmang. Sharhlar sizning kodingizni boshqa dasturchilar tomoidan tushunib o'qilishi uchun muhim ahamiyatga ega.
+Sharhlaning ikki yo'li mavjud:
+
+- _Bir qatorli sharh_
+- _Bir necha qatorli sharh_
+
+Bir necha qatorli
+
+```js copy
+// kodning o'zini bitta izoh bilan sharhlash
+```
+
+Bir necha qatorli
+
+```js copy
+/*
+  let manzil = 'tashkent';
+  let yosh = 22;
+  let uylanganmi = false;
+  Bu ko'p qatorli sharh
+*/
+```
+
+## Variables | O'zgaruvchilar
+
+O'zgaruvchilar - ma'lumotlarni saqlovchi _quti_. O'zgaruvchilar xotira joyida ma'lumotlarni saqlash uchun ishlatiladi. O'zgaruvchi e'lon qilinganda, xotira joylashuvi zahiraga olinadi. O'zgaruvchi qiymatga (ma'lumotlarga) tayinlanganda xotira maydoni shu ma'lumotlar bilan to'ldiriladi. O'zgaruvchini e'lon qilish uchun biz _var_, _let_ yoki _const_ kalit so'zlaridan foydalanamiz.
+
+O'zgaruvchining qiymati keyin ha o'zgarsa _let_ dan foydalanamiz. Agar ma'lumotlar umuman o'zgarmasa, biz _const_ dan foydalanamiz. Misol uchun, PI, mamlakat nomi, tortishish kuchi o'zgarmaydi va biz _const_ dan foydalanishimiz mumkin. Va _let_ alternative tarzda _var_ dan foydalanmaymiz, lekin uni ishlatishingizni tavsiya etilmaydi. Var, let va const haqida boshqa bo'limlarda batafsil to'xtalamiz. Hozircha yuqoridagilarni tushunishtushuntirish yetarli.
+
+Javascript o'zgaruvchilari e'lon qilishda ayrim shartlar mavjud.
+
+- JavaScript o'zgaruvchisi nomi raqam bilan boshlanmasligi kerak.
+- JavaScript o'zgaruvchi nomi dollar belgisi va pastki chiziqdan tashqari maxsus belgilarga ruxsat bermaydi.
+- JavaScript o'zgaruvchisi nomi camelcase (barchasi kichik harflarda) konventsiyasiga amal qiladi.
+- JavaScript o'zgaruvchisi nomida so'zlar orasida bo'sh joy bo'lmasligi kerak.
+
+O'zgaruvchi e'lon qilishga misollar
+
+```js copy
+ism;
+familya;
+mamlakat;
+shahar;
+poytaxt;
+yosh;
+uylanganmi;
+
+ism_sharif;
+last_name;
+is_married;
+capital_city;
+
+num1;
+num_1;
+_num_1;
+$num1;
+year2020;
+year_2020;
+```
+
+Ro'yxatdagi birinchi va ikkinchi o'zgaruvchilar JavaScript-da e'lon qilishning camelCase (barchasi kichik harflarda) konventsiyasiga amal qiladi.
+Yozish (caselar) uslublariga misollar:
+
+```js copy
+  lowercase
+  camelCase
+  PascalCase
+  kebab-case
+  snake_case
+  UPPERCASE
+```
+
+Mumkin bo'lmagan o'zgaruvchilar
+
+```js copy
+  ism-sharif
+  1_matn
+  matn_#_1
+```
+
+Keling, har xil ma'lumot turlariga ega o'zgaruvchilarni e'lon qilaylik. O'zgaruvchini e'lon qilish uchun o'zgaruvchi nomidan oldin _let_ yoki _const_ kalit so'zidan foydalanishimiz kerak. O'zgaruvchi nomidan keyin biz tenglik belgisini _=_ va qiymatni yozamiz.
+
+```js copy
+// Syntaksis
+let ozgaruvchiNomi = qiymat;
+```
+
+**E'lon qilingan o'zgaruvchilarga misollar**
+
+```js copy
+// Har xil turdagi ma'lumot turlarini o'zgaruvchilarda e'lon qilish
+let ism = "Muhammad";
+let familya = "Anvarov";
+let mamlakat = "Uzbekistan";
+let shahar = "Jizzax";
+let yosh = 22;
+let uylanganmi = false;
+
+console.log(ism, ism, mamlakat, shahar, yosh, uylanganmi);
+```
+
+```sh
+Muhammad Anvarov Uzbekistan Jizzax 22 false
+```
+
+```js copy
+// O'zgaruvchilarni raqam qiymatlari bilan e'lon qilish
+let yoshi = 22; // age in years
+const gravitatsiya = 9.81; // yerning tortishish kuchi m/s2
+const suvningQaynashi = 100; // suvning qaynash nuqtasi, harorat °C
+const PI = 3.14; // geometrik o'zgarmas son
+console.log(gravitatsiya, suvningQaynashi, PI);
+```
+
+```sh
+9.81 100 3.14
+```
+
+```js copy
+/* Shuningdek bir dona let o'zgaruvchisiga ga bir necha qiymat bersa 
+ham bo'ladi, lekin bu kodning o'qilishi qiyinlik qiladi
+(kod tartib bo'lib ketadi) */
+let ism = "Muhammad",
+  kasbi = "dasturchi",
+  manzil = "Uzbekistan";
+console.log(ism, kasbi, manzil);
+```
+
+```sh
+Muhammad dasturchi Uzbekistan
+```
+
+🌕 Mana bugunga javascript bo'yicha keraklicha bilim oldingiz, umid qilamanki unchalik qiyin bo'lmadi. Endi yuqorida o'rganganlarimizni mustahkamlash uchun bir necha vazifalani bajarishingiz kerak. Yodda tuting o'rganilgan mavzularni takrorlash va ular ustida amaliyot qilishlik bilimingizni yanada mustahkamlaydi.

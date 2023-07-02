@@ -1,8 +1,7 @@
 {
-  "index": "Introduction",
-  "another": "Another Page",
-  "advanced": "Advanced (A Folder)",
-  "docs": "Docs",
+  "index": "Kirish",
+  "day1": "Birinchi kun",
+  "example": "Example",
   "about": {
     "title": "About",
     "type": "page"

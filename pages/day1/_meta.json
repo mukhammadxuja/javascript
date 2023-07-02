@@ -1,0 +1,11 @@
+{
+    "setup": "Sozlash",
+    "console": "Console.log()",
+    "comments": "Sharhlar",
+    "syntax": "Sintaksis",
+    "arithmetics": "Arifmetik",
+    "editor": "Code Editor",
+    "add-js": "Javascriptni e'lon qilish",
+    "data-types": "Ma`lumot turlari",
+    "exercise": "Amaliyot"
+}

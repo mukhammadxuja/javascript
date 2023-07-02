@@ -1,0 +1,137 @@
+## Javascriptni e'lon qilish
+
+JavaScript-ni veb-sahifaga uch xil usulda qo'shish mumkin:
+
+- **_Inline script_**
+- **_Internal script_**
+- **_External script_**
+- **_Multiple External scripts_**
+
+Quyidagi bo'limlar veb-sahifangizga JavaScript kodini qo'shishning turli usullarini ko'rsatadi.
+
+### Inline Script | Ichki script
+
+Ish stolidan (Desktop) papka yarating va uni yuqorida korsatish **Open Folder** ni bosib, yaratilgan papkan tanlang. Va o'sha papka ichidan yangi fayl yaratib, uni **index.html** deb nomlang. Keyin pastda berilgan kodni nusxalab `ctrl + c`, **index.html** `ctrl + v` ga joylashtiring.
+
+```html copy
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Javascript 30 kunda: Inline Script</title>
+  </head>
+  <body>
+    <button onclick="alert('Hush kelibsiz: Javascript 30 kunda qo`llanmasiga')">
+      Meni bosing
+    </button>
+  </body>
+</html>
+```
+
+Endi siz birinchi inline skriptingizni yozdingiz. Biz `alert()` funksiyasidan foydalanib, yuqorida qalqib chiquvchi ogohlantirish xabarini yaratishimiz mumkin.
+
+### Internal Script | Ichki script
+
+Ichki skriptlarni (internal script) `head` yoki `body` ga yozilishi mumkin, lekin uni HTML hujjatining `body` qo'yish afzaldir.
+Ammo, birichi uni `head` ni ichiga yozib ko'ramiz.
+
+```html copy 
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Javascript 30 kunda: Inline Script</title>
+    <script>
+      console.log("Hush kelibsiz: Javascript 30 kunda qo`llanmasiga");
+    </script>
+  </head>
+  <body></body>
+</html>
+```
+
+Ko'pincha biz ichki skriptni (internal script) shunday yozamiz. `body` qismida JavaScript kodini yozish eng maqbul variant hisoblanadi. `console.log()` dan olingan natijani ko'rish uchun brauzer konsolini oching.
+
+```html copy
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Javascript 30 kunda: Inline Script</title>
+  </head>
+  <body>
+    <button
+      onclick="alert('Hush kelibsiz: Javascript 30 kunda qo`llanmasiga');"
+    >
+      Meni bosing
+    </button>
+    <script>
+      console.log("Hush kelibsiz: Javascript 30 kunda qo`llanmasiga");
+    </script>
+  </body>
+</html>
+```
+
+`console.log()`dan olingan natijani ko'rish uchun brauzer konsolini oching.
+
+![js code from vscode](images/js_code_vscode.png)
+
+### External Script | Tashqi script
+
+Ichki skriptga (internal script) o'xshab, tashqi skript (external script) havolasi `head` yoki `body` da bo'lishi mumkin, lekin uni `body` da qo'yish afzaldir.
+Birinchidan, `.js` bilan tugaydigan tashqi (external) JavaScript faylini yaratishimiz kerak. `.js` kengaytmasi bilan tugaydigan barcha fayllar JavaScript fayllaridir. Loyiha katalogingiz ichida `kirish.js` nomli fayl yarating va quyidagi kodni yozing va ushbu `.js` faylini `body` ning pastki qismiga bog'lang (import qiling).
+
+```js
+console.log("Hush kelibsiz: Javascript 30 kunda qo`llanmasiga");
+```
+
+Tashqi skriptlar (External script) `head` da:
+
+```html copy
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Javascript 30 kunda:External script</title>
+    <script src="kirish.js"></script>
+  </head>
+  <body></body>
+</html>
+```
+
+Tashqi skriptlar (External script) `body` da:
+
+```html copy
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Javascript 30 kunda:External script</title>
+  </head>
+  <body>
+    <script src="kirish.js"></script>
+  </body>
+</html>
+```
+
+`console.log()`dan olingan natijani ko'rish uchun brauzer konsolini oching.
+
+### Multiple External Scripts | Bir nechta tashqi skriptlar
+
+Shuningdek, biz bir nechta tashqi JavaScript fayllarini veb-sahifaga ulashimiz mumkin.
+`kirish.js` yonida `salomdunyo.js` faylini yarating va quyidagi kodni yozing.
+
+```js
+console.log("Hello, World!");
+```
+
+```html copy
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Multiple External Scripts | Bir nechta tashqi skriptlar</title>
+  </head>
+  <body>
+    <script src="salomdunyo.js.js"></script>
+    <script src="kirish.js"></script>
+  </body>
+</html>
+```
+
+_Sizning eng asosiy bo'lgan .js faylingiz qolganlarining ostida bo'lishligi kerak_. ⚠️ Buni eslab qolish juda muhim.
+
+![Multiple Script](images/multiple_script.png)

@@ -2,6 +2,31 @@ import React from "react";
 import { DocsThemeConfig } from "nextra-theme-docs";
 
 const config: DocsThemeConfig = {
+  head: (
+    <>
+      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <meta property="og:title" content="Javascript.uz" />
+      <meta
+        property="og:description"
+        content="Javascript learning platform for uzbeks."
+      />
+    </>
+  ),
+  faviconGlyph: "JS",
+  useNextSeoProps() {
+    return {
+      titleTemplate: "%s – Javascript 30 kunda",
+    };
+  },
+  banner: {
+    key: "2.0-release",
+    text: (
+      <a href="https://nextra.site" target="_blank">
+        🎉 Nextra 2.0 is released. Read more →
+      </a>
+    ),
+  },
+  primaryHue: 50,
   logo: (
     <span style={{ display: "flex", alignItems: "center" }}>
       <svg
@@ -26,7 +51,7 @@ const config: DocsThemeConfig = {
     link: "https://github.com/shuding/nextra-docs-template",
   },
   chat: {
-    link: "https://discord.com",
+    link: "https://t.me//akzmsh",
   },
   docsRepositoryBase: "https://github.com/shuding/nextra-docs-template",
   footer: {

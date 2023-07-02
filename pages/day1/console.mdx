@@ -1,0 +1,48 @@
+## Console.log()
+
+#### Google Chrome Consoleni ochish
+
+You can open Google Chrome console either by clicking three dots at the top right corner of the browser, selecting _More tools -> Developer tools_ or using a keyboard shortcut. I prefer using shortcuts.
+
+![Opening chrome](images/opening_developer_tool.png)
+
+Chrome console ni ochish talab qilinadi va buni ochish uchun ushbu tugmalar ketma ketligni bosing.
+
+```sh copy
+Macbookda
+Command+Option+J
+
+Windows/Linux:
+Ctl+Shift+J
+```
+
+![Consoleni ochish](images/opening_chrome_console_shortcut.png)
+
+Google Chrome console ini ochganingizdan so'ng, belgilangan tugmalarni o'rganishga harakat qiling. Biz ko'p vaqtimizni console da o'tkazamiz. Console - bu sizning JavaScript kodingiz ketadigan joy. Google Console V8 dvigateli - JavaScript kodingizni mashina kodiga o'zgartiradi.
+Keling, Google Chrome console da JavaScript kodini yozaylik:
+
+![Consoleda yozish](images/js_code_on_chrome_console.png)
+
+##### Console.log
+
+Yuqoridagi rasmda console ga **console.log('Hello, World!)** kodini kiritganimizda so'ng bizga **Hello, World!** so'zini qaytarmoqda, bu esa kodimiz ishlaganini aglatadi. 🎉
+
+```js copy
+console.log("Hello, World!");
+```
+
+##### Console.log bir nechta (Arguments) parametrlar bilan
+
+**`console.log()`** funksiyasi vergul bilan ajratilgan holda bir nechta parametrlarni qabul qilishi mumkin. Sintaksis quyidagicha ko'rinadi:**`console.log(paramter1, paramter2, paramter3)`**
+
+![console log multiple arguments](images/console_log_multipl_arguments.png)
+
+```js copy
+console.log("Hello", "World", "!");
+console.log("HAPPY", "NEW", "YEAR", 2020);
+console.log("Welcome", "to", 30, "Days", "Of", "JavaScript");
+```
+
+Yuqoridagi koddan ko'rinib turibdiki, _`console.log()`_ bir nechta argumentlarni qabul qilishi mumkin.
+
+🎉 Tabriklayman! Siz birinchi JavaScript kodingizni _`console.log()`_ yordamida yozdingiz.

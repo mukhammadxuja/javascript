@@ -1,0 +1,22 @@
+## Sintaksis
+
+Dasturlash tillari inson tillariga o'xshaydi. O'zbek yoki boshqa ko'plab tillar fikrimizni bayon qilish uchun so'zlar, iboralar, jumlalar, qo'shma gaplardan foydalanadi. Sintaksisning ma'nosi _tilda yaxshi tuzilgan jumlalarni yaratish uchun so'z va iboralarning joylashishi_. Sintaksisning texnik ta'rifi - bu kompyuter tilidagi bayonotlar tuzilishi. Dasturlash tillarida ham sintaksis mavjud. JavaScript - bu dasturlash tili va boshqa dasturlash tillari kabi uning o'z sintaksisi mavjud. Agar biz JavaScript tushunadigan sintaksisni yozmasak, u turli xil xatolarni keltirib chiqaradi. Keyinchalik JavaScript xatolarining turli ni ko'rib chiqamiz. Hozircha sintaktik xatolarni ko'rib chiqaylik.
+
+![Xato](images/raising_syntax_error.png)
+
+Men ataylab hato qildim, buni esa console ko'rishingiz mumkin. Javascript bu hatolarni tezda console ga chiqaradi va qaysi turdagi xatolikka yo'l qo'yilganligi haqida xabar beradi. Qizil rangda berilgan hatolikni shu zahoti ko'rib, sintaksisni to'g'rilashimiz va muammoni hal qilishimiz mumkin. Dasturdagi xatolarni aniqlash va yo'q qilish jarayoni **debugging** deb ataladi. Keling endi xatolarni tuzatishga harakat qilamiz:
+
+```js copy
+console.log("Hello, World!");
+console.log("Hello, World!");
+```
+
+Hozirgacha biz `_console.log()_` yordamida matnni qanday console ga chiqarishni ko'rgandik. Agar biz qandaydir matnni _`console.log()`_ ga chiqarmoqchi bo'lsa, ular qo'sh tirnoq, bir tirnoq, yoki backtik ichida bo'lishligi kerak.
+
+**Misol:**
+
+```js copy
+console.log("Hello, World!");
+console.log("Hello, World!");
+console.log(`Hello, World!`);
+```

@@ -1,0 +1,65 @@
+import { Steps, Callout } from "nextra-theme-docs";
+
+## Sozlash
+
+<Callout emoji="💡">
+  Ishonamanki, sizda dasturchi, kompyuter va Internet bo'lish uchun motivatsiya
+  va kuchli istak bor. Agar sizda ular bo'lsa, demak sizda boshlash uchun hamma
+  narsa bor.
+</Callout>
+
+<Steps>
+### Node.js yuklash
+
+Sizga hozircha Node.js kerak emas, lekin keyinroq kerak bo'lishi mumkin.
+
+![Node download](images/download_node.png)
+
+Yuklab olingandan so'ng (**Downloads** yoki **Загрузки** faylidan dasturni topib), ustiga ikki marta bosing va o'rnating. Barchasi juda oddiy **_next_** tugmasini ketma ket bosish orqali o'rnatiladi.
+
+![Install node](images/install_node.png)
+
+Qurilmamizdagi **_cmd_** yoki **_Windows Powershel_**ni ochib **node -v** buyrug'ini berish orqali node o'rnatilganligini tekshirishimiz mumkin.
+
+```sh copy
+username $ node -v
+
+v12.14.0
+```
+
+Menda **12.14.0** versiyasi o'rnatildi, siz yuklab olayotgan vaqtingizda versiya o'zgargan bo'lishi mumkin va bu hech qanday muammo keltirib chiqarmaydi.
+
+### Brauzer
+
+Ishlatishimiz uchun ko'plab brauzerlar mavjud. Biroq, men Google Chrome-ni tavsiya qilaman.
+
+#### Google Chrome o'rnatish
+
+Agar sizda [Google Chrome](https://www.google.com/chrome/) hali mavjud boʻlmasa, uni yuklab oling. Agar bo'lsa shunchaki ushbu qisni tashlab keting.
+
+![Google Chrome](images/google_chrome.png)
+
+#### Google Chrome Consoleni ochish
+
+You can open Google Chrome console either by clicking three dots at the top right corner of the browser, selecting _More tools -> Developer tools_ or using a keyboard shortcut. I prefer using shortcuts.
+
+![Opening chrome](images/opening_developer_tool.png)
+
+Chrome console ni ochish talab qilinadi va buni ochish uchun ushbu tugmalar ketma ketligni bosing.
+
+```sh copy
+Macbookda
+Command+Option+J
+
+Windows/Linux:
+Ctl+Shift+J
+```
+
+![Consoleni ochish](images/opening_chrome_console_shortcut.png)
+
+Google Chrome console ini ochganingizdan so'ng, belgilangan tugmalarni o'rganishga harakat qiling. Biz ko'p vaqtimizni console da o'tkazamiz. Console - bu sizning JavaScript kodingiz ketadigan joy. Google Console V8 dvigateli - JavaScript kodingizni mashina kodiga o'zgartiradi.
+Keling, Google Chrome console da JavaScript kodini yozaylik:
+
+![Consoleda yozish](images/js_code_on_chrome_console.png)
+
+</Steps>
