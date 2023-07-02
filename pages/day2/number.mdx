@@ -1,0 +1,98 @@
+## Numbers | Raqamlar
+
+Raqamlar barcha arifmetik amallarni bajara oladigan butun va o'nlik qiymatlardir.
+Keling, raqamlarning ba'zi misollarini ko'rib chiqaylik.
+
+### Raqamli ma'lumotlar turlarini e'lon qilish
+
+```js copy
+let age = 35;
+const gravity = 9.81; // Biz o'zgarmas qiymatlar uchun const dan foydalanamiz, yerning tortishish kuchi m/s2
+let mass = 72; // kilogrammdagi massa
+const PI = 3.14; // PI geometrik doimiy
+
+// More Examples
+const boilingPoint = 100; // suvning qaynash nuqtasi
+const bodyTemp = 37; // o'rtacha inson tanasi harorati
+
+console.log(age, gravity, mass, PI, boilingPoint, bodyTemp);
+```
+
+### Math ob'yekt
+
+JavaScript-da _Math_ ob'yektlar - raqamlar bilan ishlashning ko'plab usullarini taqdim etadi.
+
+```js copy
+const PI = Math.PI;
+
+console.log(PI); // 3.141592653589793
+
+console.log(Math.round(PI)); // eng yaqin raqamga yaxlitlash = 3;
+
+console.log(Math.round(9.81)); // 10; 0.23 = 0; -5.95 = -6
+
+console.log(Math.floor(PI)); // 3dan past
+
+console.log(Math.ceil(PI)); // berilgan sondan katta yoki unga teng kichikroq butun sonni qaytaradi. .95 = 1; 7.004 = 8;
+
+console.log(Math.min(-5, 3, 20, 4, 5, 10)); // -5, minimum qiymatni qaytaradi
+
+console.log(Math.max(-5, 3, 20, 4, 5, 10)); // 20, maksimum qiymatni qaytaradi
+
+const randNum = Math.random(); // 0 dan 0,999999 gacha bo'lgan tasodifiy sonni yaratadi
+console.log(randNum);
+
+// 0 dan 10 gacha tasodifiy son yarataylik
+
+const num = Math.floor(Math.random() * 11); // 0 dan 10 gacha bo'lgan tasodifiy sonni yaratadi
+console.log(num);
+
+//Absolute value
+console.log(Math.abs(-10)); // 10
+
+//Square root
+console.log(Math.sqrt(100)); // 10
+
+console.log(Math.sqrt(2)); // 1.4142135623730951
+
+// Power
+console.log(Math.pow(3, 2)); // 9
+
+console.log(Math.E); // 2.718
+
+// Logarithm | Logorifm
+// X ning E asosi bilan natural logarifmni qaytaradi, Math.log(x)
+console.log(Math.log(2)); // 0.6931471805599453
+console.log(Math.log(10)); // 2.302585092994046
+
+// 2 va 10 ning natural logarifmini qaytaradi
+console.log(Math.LN2); // 0.6931471805599453
+console.log(Math.LN10); // 2.302585092994046
+
+// Trigonometry | Trigonometriya
+Math.sin(0);
+Math.sin(60);
+
+Math.cos(0);
+Math.cos(60);
+```
+
+#### Tasodifiy raqamlar generatori
+
+JavaScript Matematik Ob'ektida 0 dan 0,999999999 gacha raqamlarni hosil qiluvchi random() usuli raqamli generator mavjud...
+
+```js copy
+let randomNum = Math.random(); // 0 dan 0,999 gacha hosil qiladi...
+```
+
+Keling, 0 dan 10 gacha tasodifiy sonni yaratish uchun random() usulidan qanday foydalanishimiz mumkinligini ko'rib chiqamiz:
+
+```js copy
+let randomNum = Math.random(); // 0 dan 0,999 gacha hosil qiladi
+let numBtnZeroAndTen = randomNum * 11;
+
+console.log(numBtnZeroAndTen); // bu quyidagilarni beradi: min 0 va maksimal 10,99
+
+let randomNumRoundToFloor = Math.floor(numBtnZeroAndTen);
+console.log(randomNumRoundToFloor); // bu 0 dan 10 gacha bo'lgan qiymatlarni beradi
+```

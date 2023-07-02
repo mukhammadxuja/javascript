@@ -1,0 +1,115 @@
+## Data Types | Ma'lumot Turlari
+
+Oldingi bo'limda biz ma'lumotlar turlari haqida bir oz to'xtalga edik. Ma'lumot yoki qiymatda ma'lumotlar turlariga bor. Ma'lumotlar turlari ma'lumotlarning xususiyatlarini tavsiflaydi. Ma'lumotlar turlarini ikkiga bo'linadi:
+
+1. Primitive ma'lumot turlari
+2. Non-primitive ma'lumot turlari
+
+### Primitive Ma'lumot Turlari
+
+JavaScript-da Primitive ma'lumotlar turlariga quyidagilar kiradi:
+
+1.  Number - Butun sonlar = 1, 2, 3, (float = 0.12, 12.023)
+2.  String - Bir yoki undan ko'p belgida tashkil topgan va "qo'sh tirnoq", 'bir tirnoq' va backtick ichidagi to'plam.
+3.  Boolean - true yoki false qiymat
+4.  Null - bo'sh yoki bor bo'lmagan qiymatlar
+5.  Undefined - qiymati e'lon qilinmagan o'zgaruvchi
+6.  Symbol - Symbol konstruktori tomonidan yaratilishi mumkin bo'lgan noyob qiymat
+
+JavaScript-da Non-primitive ma'lumotlar turlariga quyidagilar kiradi:
+
+1. Object | Obyekt
+2. Array | Massiv
+
+Keling, primitive va non-primitive ma'lumotlar turlari nimani anglatishini ko'rib chiqaylik.
+_Primitiv_ ma'lumotlar turlari o'zgarmas (o'zgartirilmaydigan) ma'lumotlar turlaridir. Primitive ma'lumotlar turi yaratilgandan so'ng biz uni o'zgartira olmaymiz.
+
+**Misol:**
+
+```js copy
+let word = "JavaScript";
+```
+
+Agar biz _word_ o'zgaruvchisida saqlangan stringni o'zgartirishga harakat qilsak, JavaScript bizga xato qaytaradi. Har qanday "qo'sh tirnoq", 'bir tirnoq' va backtick ichidagi ma'lumot _string_ ma'lumot turidir.
+
+```js copy
+word[0] = "Y"; /* Bu yerda word o'zgaruvchising birinchi harfini
+Y harfiga o'zgariroqchi bo'ldik */
+```
+
+Bu ifoda _word_ o'zgaruvchisida saqlangan qatorni o'zgartirmaydi. Shunday qilib, biz string o'zgartirish mumkin emas yoki boshqacha qilib aytganda o'zgarmas deb aytishimiz mumkin.
+Primitiv ma'lumotlar turlari qiymatlari bo'yicha taqqoslanadi. Keling, turli xil ma'lumotlar qiymatlarini taqqoslaylik. Quyidagi misolga qarang:
+
+```js copy
+let numOne = 3;
+let numTwo = 3;
+
+console.log(numOne == numTwo); // true
+
+let js = "JavaScript";
+let py = "Python";
+
+console.log(js == py); //false
+
+let lightOn = true;
+let lightOff = false;
+
+console.log(lightOn == lightOff); // false
+```
+
+### Non-Primitive Ma'lumot Turlari
+
+_Non-primitive_ ma'lumotlar turlari o'zgartirilishi yoki o'zgarishi mumkin. Biz non-primitive ma'lumotlar turlarining qiymatini yaratilgandan keyin o'zgartirishimiz mumkin.
+Keling, Array (massiv) yaratish orqali ko'raylik. Array (massiv) - kvadrat [] qavs ichidagi ma'lumotlar qiymatlari ro'yxati. Massivlar bir xil yoki turli xil ma'lumotlarni o'z ichiga olishi mumkin. Massiv qiymatlariga ularning indeksi orqali havola qilinadi. JavaScript-da massiv indeksi noldan boshlanadi. Ya'ni, massivning birinchi elementi indeks nolda, ikkinchi element birinchi indeksda, uchinchi element esa ikkinchi indeksda va hokazo.
+
+```js copy
+let nums = [1, 2, 3];
+nums[0] = 10;
+
+console.log(nums); // [10, 2, 3]
+```
+
+Ko'rib turganingizdek, non-primitive ma'lumotlar turi bo'lgan massiv o'zgaruvchan. Non-primitive ma'lumotlar turlarini qiymat bo'yicha taqqoslab bo'lmaydi. Ikki non-primitive ma'lumotlar turi bir xil xususiyat va qiymatlarga ega bo'lsa ham, ular qat'iy teng emas.
+
+```js copy
+let nums = [1, 2, 3];
+let numbers = [1, 2, 3];
+
+console.log(nums == numbers); // false
+
+let userOne = {
+  name: "Abdulloh",
+  role: "ustoz",
+  country: "Uzbekistan",
+};
+
+let userTwo = {
+  name: "Abdulloh",
+  role: "ustoz",
+  country: "Uzbekistan",
+};
+
+console.log(userOne == userTwo); // false
+```
+
+Rule of thumb, we do not compare non-primitive data types. Do not compare arrays, functions, or objects.
+Non-primitive values are referred to as reference types, because they are being compared by reference instead of value. Two objects are only strictly equal if they refer to the same underlying object.
+
+```js copy
+let nums = [1, 2, 3];
+let numbers = nums;
+
+console.log(nums == numbers); // true
+
+let userOne = {
+  name: "Muhammad",
+  role: "teaching",
+  country: "Uzbekistan",
+};
+
+let userTwo = userOne;
+
+console.log(userOne == userTwo); // true
+```
+
+Agar siz primitive turlari va non-primitive ma'lumotlar turlari o'rtasidagi farqni tushunishda qiynalayotgan bo'lsangiz, boshlanishiga bu odatiy hol. Tinchlaning va keyingi bo'limga o'ting va bir muncha vaqt o'tgach shu mavzuga qaytib kelishga harakat qiling. Endi raqamlar(Number) turi bo'yicha ma'lumotlar turlarini boshlaylik.

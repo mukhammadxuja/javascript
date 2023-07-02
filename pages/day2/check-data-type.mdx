@@ -1,0 +1,110 @@
+## Ma'lumotlar turlarini tekshirish va uzatish
+
+### Ma'lumotlar turlarini tekshirish
+
+Muayyan o'zgaruvchining ma'lumotlar turini tekshirish uchun biz _typeof_ usulidan foydalangandik.
+
+**Misol:**
+
+```js copy
+// Turli xil javascript ma'lumotlar turlari
+// Keling, turli xil ma'lumotlar turlarini e'lon qilaylik
+
+let firstName = "Muhammad"; // string
+let lastName = "Anvarov"; // string
+let country = "Uzbekistan"; // string
+let city = "Tashkent"; // string
+let age = 22; // number
+let job; // undefined, chunki qiymat berilmagan
+
+console.log(typeof "Muhammad"); // string
+console.log(typeof firstName); // string
+console.log(typeof 10); // number
+console.log(typeof 3.14); // number
+console.log(typeof true); // boolean
+console.log(typeof false); // boolean
+console.log(typeof NaN); // number
+console.log(typeof job); // undefined
+console.log(typeof undefined); // undefined
+console.log(typeof null); // object
+```
+
+### Ma'lumotlar turini o'zgartirish (casting)
+
+- Casting: Bir ma'lumot turini boshqa ma'lumotlar turiga aylantirish. Biz _parseInt()_, _parseFloat()_, _Number()_, _+ belgisi_, _str()_ dan foydalanamiz
+- Biz arifmetik amallarni bajarganimizda, string raqamlari birinchi navbatda butun songa yoki floatga aylantirilishi kerak, agar u xato qaytarmasa.
+
+#### String Integerga
+
+Biz string sonini raqamga aylantirishimiz mumkin. Qo'shtirnoq ichidagi har qanday raqam string raqamidir. String raqamiga misol: '10', '5' va boshqalar.
+Quyidagi usullardan foydalangan holda stringni raqamga aylantirishimiz mumkin:
+
+- parseInt()
+- Number()
+- Plus orqali(+)
+
+```js copy
+let num = "10";
+let numInt = parseInt(num);
+console.log(numInt); // 10
+```
+
+```js copy
+let num = "10";
+let numInt = Number(num);
+
+console.log(numInt); // 10
+```
+
+```js copy
+let num = "10";
+let numInt = +num;
+
+console.log(numInt); // 10
+```
+
+#### String Floatga
+
+Biz String qoldiq soni qoldiq soniga o'zgartirishimiz mumkin. Qo'shtirnoq ichidagi har qanday son string qoldiq sonidir. Stringli qoldiq soniga misol: '9,81', '3,14', '1,44' va boshqalar.
+Quyidagi usullar yordamida qoldiq Stringini songa aylantirishimiz mumkin:
+
+- parseFloat()
+- Number()
+- Plus orqali(+)
+
+```js copy
+let num = "9.81";
+let numFloat = parseFloat(num);
+
+console.log(numFloat); // 9.81
+```
+
+```js copy
+let num = "9.81";
+let numFloat = Number(num);
+
+console.log(numFloat); // 9.81
+```
+
+```js copy
+let num = "9.81";
+let numFloat = +num;
+
+console.log(numFloat); // 9.81
+```
+
+#### Qoldiq son Integerga
+
+Biz qoldiq raqamlarini butun sonlarga o'zgartirishimiz mumkin.
+qoldiqni int ga aylantirish uchun quyidagi usuldan foydalanamiz:
+
+- parseInt()
+
+```js copy
+let num = 9.81;
+let numInt = parseInt(num);
+
+console.log(numInt); // 9
+```
+
+🌕 Agar shu matnni o'qiyotgan bo'lsangiz siz juda yaxshi o'rganmoqdasiz. Siz hozirgina 2-kun sinovlarini yakunladingiz va siz buyuklik sari ikki qadam oldindasiz. Endi miyangiz va mushaklaringiz uchun bir nechta mashqlarni bajaring. Yodda tuting takrorlash har qanday bilimni mustahkamaydi.

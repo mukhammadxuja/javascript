@@ -1,0 +1,558 @@
+## String | Satr
+
+String **_Bir tirnoq_** , **_Qo'sh tirnoq_**, **_back-tick_** ostida joylashgan matnlardir. Satrni e'lon qilish uchun bizga o'zgaruvchi nomi, tayinlash operatori, bir tirnoq ostidagi qiymat, qo'sh qo'shtirnoq yoki teskari tirnoq kerak.
+Keling, qatorlarning ba'zi misollarini ko'rib chiqaylik:
+
+```js copy
+let space = " "; // bo'sh joy qatori
+let firstName = "Muhammad";
+let lastName = "Anvarov";
+let country = "Uzbekistan";
+let city = "Tashkent";
+let language = "JavaScript";
+let job = "dasturchi";
+let quote = "The saying,'Seeing is Believing' is not correct in 2020.";
+let quotWithBackTick = `The saying,'Seeing is Believing' is not correct in 2020.`;
+```
+
+### Stringlarni birlashtirish (concatenation)
+
+Ikki yoki undan ortiq qatorlarni bir-biriga bog'lash concatenation deyiladi.
+Oldingi String bo'limida e'lon qilingan stringlardan foydalanish:
+
+```js copy
+let fullName = firstName + space + lastName; // concatenation, ikki qatorni birlashtirish.
+console.log(fullName);
+```
+
+```sh
+Muhammad Anvarov
+```
+
+Biz stringlarni turli yo'llar bilan birlashtira olamiz.
+
+#### Biz stringlarni turli yo'llar bilan birlashtira olamiz.
+
+Qo'shish operatori yordamida stinglarni birlashtirish eski usul hisoblanadi. Birlashtirishning bu usuli zerikarli va xatolarga moyil. Shu tarzda birlashtirishni bilish yaxshi, lekin men ES6 shablon satrlaridan foydalanishni tavsiya qilaman (ES6 haqida keyinroq to'xtalamiz).
+
+```js copy
+// Har xil turdagi ma'lumotlarning turli o'zgaruvchilarini e'lon qilish
+let space = " ";
+let firstName = "Muhammad";
+let lastName = "Anvarov";
+let country = "Uzbekistan";
+let city = "Tashkent";
+let language = "JavaScript";
+let job = "dasturchi";
+let age = 22;
+
+let fullName = firstName + space + lastName;
+let personInfoOne = fullName + ". I am " + age + ". I live in " + country; // ES6 bilan stringlarni qo'shish
+
+console.log(personInfoOne);
+```
+
+```sh
+Muhammad Anvarov. I am 22. I live in Uzbekistan
+```
+
+#### Long Literal Stringlar
+
+String bitta belgi yoki paragraf yoki sahifa bo'lishi mumkin. Agar stringip uzunligi juda katta bo'lsa, u bir qatorga to'g'ri kelmaydi. String keyingi satrda davom etishini bildirish uchun har bir satr oxiridagi teskari chiziq belgisidan (\\) foydalanishimiz mumkin.
+
+**Example:**
+
+```js copy
+const paragraph =
+  "My name is Muhammad Anvarov. I live in Uzbekistan, Tashkent.\
+I am a developer and I love teaching. I teach HTML, CSS, JavaScript, React, Redux, \
+Node.js, Python, Data Analysis and D3.js for anyone who is interested to learn. \
+In the end of 2019, I was thinking to expand my teaching and to reach \
+to global audience and I started a Python challenge from November 20 - December 19.\
+It was one of the most rewarding and inspiring experience.\
+Now, we are in 2020. I am enjoying preparing the 30DaysOfJavaScript challenge and \
+I hope you are enjoying too.";
+
+console.log(paragraph);
+```
+
+#### Stringda ketma-ketliklar qochish
+
+JavaScript va boshqa dasturlash tillarida \ keyin ba'zi belgilar qo'shilish ketma-ketligidir. Keling, eng keng tarqalgan qochish belgilarini ko'rib chiqaylik:
+
+- \n: Yangi qatordan
+- \t: Tab, 8 bo'shliqni bildiradi
+- \\\\: Teskari chiziq \
+- \\': Bir tirnoq (')
+- \\": Qo'sh tirnoq (")
+
+```js copy
+console.log(
+  "Umid qilamanki, hammaga Javascript 30 kunda qo'lanmasi yoqadi. Sizgachi ?"
+); // line break
+console.log("Har xilmavzusidagi\bo'limlar");
+console.log("1-Kun\t3\t5");
+console.log("2-Kun\t3\t5");
+console.log("3-Kun\t3\t5");
+console.log("4-Kun\t3\t5");
+console.log("Bu teskari chiziq belgisi (\\)"); // Teskari chiziq yozish uchun
+console.log('Har bir dasturlash tili "Hello, World!" bilan boshlanadi.');
+console.log("Har bir dasturlash tili 'Hello, World!' bilan boshlanadi.");
+```
+
+Natija:
+
+```sh
+Umid qilamanki, hammaga Javascript 30 kunda qo'lanmasi yoqadi
+Sizgachi ?
+Har xil   mavzusidagi   bo'limlar
+1-Kun 3 5
+2-Kun 3 5
+3-Kun 3 5
+4-Kun 3 5
+Bu teskari chiziq belgisi (\)
+Har bir dasturlash tili "Hello, World!" bilan boshlanadi.
+Har bir dasturlash tili 'Hello, World!' bilan boshlanadi.
+```
+
+#### Shablon Literallar (Shablon Stringlar)
+
+Shablon satrlarini yaratish uchun biz ikkita orqa belgidan foydalanamiz. Biz ma'lumotlarni shablon qatoriga ifoda sifatida kiritishimiz mumkin. Ma'lumotlarni kiritish uchun biz iborani $ belgisidan oldin jingalak qavs ({}) bilan o'rab olamiz. Quyidagi sintaksisga qarang.
+
+```js copy
+//sintaksis
+`qanday rando so'zlar ${ifoda}`;
+```
+
+**Misol: 1**
+
+```js copy
+console.log(`The sum of 2 and 3 is 5`); // statically writing the data
+let a = 2;
+let b = 3;
+console.log(`The sum of ${a} and ${b} is ${a + b}`); // injecting the data dynamically
+```
+
+**Misol:2**
+
+```js copy
+let firstName = "Muhammad";
+let lastName = "Anvarov";
+let country = "Uzbekistan";
+let city = "Tashkent";
+let language = "JavaScript";
+let job = "dasturchi";
+let age = 22;
+let fullName = firstName + " " + lastName;
+
+let personInfoTwo = `Mening ismim ${fullName}. Va men ${age} yoshdaan. Men ${country}da yashayman.`; //ES6 - String interpolyatsiya usuli
+let personInfoThree = `Mening ismim ${fullName}. Men ${city} shahri, ${country} davlatida yashayman. Men ${job} bo'lib ishlayman. Men ${language} tilidan dasturlashda foydalanaman.`;
+console.log(personInfoTwo);
+console.log(personInfoThree);
+```
+
+```sh
+Mening ismim Muhammad. Va men 22 yoshdaman. Men Uzbekistanda yashayman.
+Mening ismim Muhammad Anvarov. Men Tashkent shahri, Uzbekistan davlatida yashayman. Men dasturchi bo'lib ishlayman. Men JavaScript tilidan dasturlashda foydalanaman.
+```
+
+String shablonidan yoki string interpolyatsiya usulidan foydalanib, biz qiymat bo'lishi mumkin bo'lgan ifodalarni yoki ba'zi operatsiyalarni (taqqoslash, arifmetik amallar, uchlik operatsiya) qo'shishimiz mumkin.
+
+```js copy
+let a = 2;
+let b = 3;
+console.log(`${a} ${b} dan kattaroq : ${a > b}`);
+```
+
+```sh
+2 3 dan kattaroq : false
+```
+
+### String Metodlari
+
+Javascript obyektlardan tashkil topgan. String - bu primativ ma'lumotlar turi bo'lib, biz uni yaratilgandan keyin o'zgartira olmaymiz. Stringda ko'plab metodlari mavjud. Satrlar bilan ishlashda bizga yordam beradigan turli xil string metodlari mavjud.
+
+#### 1. _length_
+
+string _length_ xossasi (property) stringdagi elementlar sonini qaytaradi. (Bo'sh joylarni ham hisoblaydi = spaces)
+
+**Misol:**
+
+```js copy
+let js = "JavaScript";
+console.log(js.length); // 10
+let firstName = "Muhammad";
+console.log(firstName.length); // 8
+let withSpaces = "So'zlar orasidagi bo'shliqni ham hisoblaydi.";
+console.log(withSpaces.length); // 44
+```
+
+#### 2. _Stringni belgilarga kirish_
+
+Biz stringni indeksidan foydalanib, uning har bir belgisiga kirishimiz mumkin. Dasturlashda hisoblash 0 dan boshlanadi. Stringni birinchi indeksi nolga teng, oxirgi indeks esa stringni uzunligi minus bir (-1).
+
+![Accessing sting by index](images/string_indexes.png)
+
+Keling, "JavaScript" qatoridagi turli belgilarga kirishga ruxsat beramiz.
+
+```js copy
+let string = "JavaScript";
+let firstLetter = string[0];
+
+console.log(firstLetter); // J
+
+let secondLetter = string[1]; // a
+let thirdLetter = string[2];
+let lastLetter = string[9];
+
+console.log(lastLetter); // t
+
+let lastIndex = string.length - 1;
+
+console.log(lastIndex); // 9
+console.log(string[lastIndex]); // t
+```
+
+#### 3. _toUpperCase()_
+
+Bu usul stringni katta harflarga o'zgartiradi.
+
+```js copy
+let string = "JavaScript";
+
+console.log(string.toUpperCase()); // JAVASCRIPT
+
+let firstName = "Muhammad";
+
+console.log(firstName.toUpperCase()); // MUHAMMAD
+
+let country = "Uzbekistan";
+
+console.log(country.toUpperCase()); // UZBEKISTAN
+```
+
+#### 4. _toLowerCase()_:
+
+Bu usul stringni kichik harflarga o'zgartiradi.
+
+```js copy
+let string = "JavasCript";
+
+console.log(string.toLowerCase()); // javascript
+
+let firstName = "Muhammad";
+
+console.log(firstName.toLowerCase()); // muhammad
+
+let country = "Uzbekistan";
+
+console.log(country.toLowerCase()); // mzbekistan
+```
+
+#### 5. _substr()_:
+
+Bu 2 ta argument qabul qiladi, 1-si boshlang'ich indeksi va 2-si bo'linadigan belgilar soni.
+
+```js copy
+let string = "JavaScript";
+console.log(string.substr(4, 6)); // Script
+
+let country = "Finland";
+console.log(country.substr(3, 4)); // land
+```
+
+#### 6. _string ichidagi soz()_:
+
+Bu 2 ta argument qabul qiladi, 1-si boshlang'ich indeks va 2-si to'xtash indeksi, lekin u to'xtash indeksidagi belgini o'z ichiga olmaydi.
+
+```js copy
+let string = "JavaScript";
+
+console.log(string.string ichidagi soz(0, 4)); // Java
+console.log(string.string ichidagi soz(4, 10)); // Script
+console.log(string.string ichidagi soz(4)); // Script
+
+let country = "Finland";
+
+console.log(country.string ichidagi soz(0, 3)); // Fin
+console.log(country.string ichidagi soz(3, 7)); // land
+console.log(country.string ichidagi soz(3)); // land
+```
+
+#### 7. _split()_:
+
+Split usuli (method) qatorni belgilangan joyda ajratadi.
+
+```js copy
+let string = "Javasript 30 kunda";
+
+console.log(string.split()); // Massiv (array) qaytaradi -> ["Javasript 30 kunda"]
+console.log(string.split(" ")); // Har bir so'zni bo'laklarga ajratadi -> ["Javasript", "30", "kunda"]
+
+let firstName = "Muhammad";
+
+console.log(firstName.split()); // Massiv (array) qaytaradi - > ["Muhammad"]
+console.log(firstName.split("")); // Har bir harfda massivga (array) bo'linadi ->  ["M", "u", "h", "a", "m", "m", "a", "d"]
+
+let countries = "Uzbekistan, Sweden, Norway, Denmark, and Iceland";
+
+console.log(countries.split(",")); // vergul qo'yilganlarni massivga bo'ladi-> ["Uzbekistan", " Sweden", " Norway", " Denmark", " and Iceland"]
+console.log(countries.split(", ")); //  ["Uzbekistan", "Sweden", "Norway", "Denmark", "and Iceland"]
+```
+
+#### 8. _trim()_:
+
+Stringni boshida yoki oxiridagi bo'sh joyni olib tashlaydi.
+
+```js copy
+let string = "   Javasript 30 kunda   ";
+
+console.log(string); // Javasript 30 kunda | Hech qanday bo'sh joylarsiz.
+console.log(string.trim(" "));
+
+let firstName = " Muhammad ";
+
+console.log(firstName);
+console.log(firstName.trim()); // Bu holadta ham, hech qanday bo'sh joylarsiz.
+```
+
+```sh
+   Javasript 30 kunda | Bundan
+Javasript 30 kunda | Bunga
+  Muhammad | Bundan
+Muhammad | Bunga
+```
+
+#### 9. _includes()_:
+
+U o'ziga argumentini oladi va u kiritilgan argumenti stringda mavjudligini tekshiradi. _includes()_ boolean qiymatni qaytaradi. Agar stringda kiritilgan argumenti mavjud bo'lsa, u _true_ qaytaradi, aks holda u _false_ qaytaradi.
+
+```js copy
+let string = "Javasript 30 kunda";
+
+console.log(string.includes("Javasript")); // true
+console.log(string.includes("javasript")); // false - u katta harf ham mmos bo'lishi kerak!
+console.log(string.includes("kunda")); // true
+console.log(string.includes("Kunda")); // false
+console.log(string.includes("30")); // true
+
+let country = "Uzbekistan";
+
+console.log(country.includes("uz")); // false
+console.log(country.includes("Uzb")); // true
+console.log(country.includes("tan")); // true
+console.log(country.includes("Tan")); // false
+```
+
+#### 10. _replace()_:
+
+Parametr sifadi eski so'zni va o'sha so'zni o'zgartiriah kerak bo'lgan so'zga o'zgartiradi.
+
+```js copy
+string.replace(eskiSoz, yangiSoz);
+```
+
+```js copy
+let string = "Javasript 30 kunda";
+console.log(string.replace("JavaScript", "Python")); // Python 30 kunda
+
+let country = "Uzbekistan";
+console.log(country.replace("Uzbek", "Qozoq")); // Qozoqiston
+```
+
+#### 11. _charAt()_:
+
+Indeks qabul qiladi va o'sha indeks joylashgan belgini qaytaradi.
+
+```js copy
+string.charAt(index);
+```
+
+```js copy
+let string = "Javasript 30 kunda";
+console.log(string.charAt(0)); // J
+
+console.log(`0 indeksdagi harf '${string.charAt(0)}'`); // 0 indeksdagi harf 'J'
+```
+
+#### 12. _charCodeAt()_:
+
+Ushbu usul berilgan indeksdagi UTF-16 kod birligini ifodalovchi 0 dan 65535 gacha bo'lgan butun sonni qaytaradi.
+
+```js copy
+string.charCodeAt(index);
+```
+
+```js copy
+let string = "Javasript 30 kunda";
+console.log(string.charCodeAt(0)); // J ASCII raqami 74
+
+let lastIndex = string.length - 1; // Teskari sanoq | adnuk = kunda
+console.log(string.charCodeAt(lastIndex)); // a ASCII raqami 97
+```
+
+#### 13. _indexOf()_:
+
+String qiymatlarining indexOf() usuli ushbu satrni qidiradi va ko'rsatilgan pastki qatorning birinchi paydo bo'lish indeksini qaytaradi. U ixtiyoriy boshlang'ich pozitsiyasini oladi va belgilangan raqamdan kattaroq yoki unga teng indeksda ko'rsatilgan pastki qatorning birinchi paydo bo'lishini qaytaradi.
+
+```js copy
+string.indexOf(argument);
+string.indexOf(argument, joylashuv);
+```
+
+```js copy
+let string = "Javasript 30 kunda";
+
+console.log(string.indexOf("J")); // 0
+console.log(string.indexOf("30")); // 10
+```
+
+#### 14. _lastIndexOf()_:
+
+1-argument oladi va agar pastki satr satrda mavjud bo'lsa, u 1-argumentni oxirgi pozitsiyasini qaytaradi, agar u mavjud bo'lmasa, u -1 ni qaytaradi.
+
+```js copy
+//Sintaksis
+string.lastIndexOf(string ichidagi soz);
+```
+
+```js copy
+let string =
+  "I love JavaScript. If you do not love JavaScript what else can you love.";
+
+console.log(string.lastIndexOf("love")); // 67
+console.log(string.lastIndexOf("you")); // 63
+console.log(string.lastIndexOf("JavaScript")); // 38
+```
+
+#### 15. _concat()_:
+
+U ber nechta argumentlarni oladi va ularni birlashtiradi.
+
+```js copy
+string.concat(argument, argument, argument);
+```
+
+```js copy
+let string = "30";
+console.log(string.concat("JavaScript", "30", "kunda")); // JavaScript30kunda
+
+let country = "Uzbek";
+console.log(country.concat("iston")); // Uzbekistan
+```
+
+#### 16. _startsWith_:
+
+Ushbu metodi argument sifatida berilgan so'zni stringni boshlanish so'zi bilan bir ekanligini tekshiradi, mos ravishda true yoki false qaytaradi.
+
+```js copy
+// sintaksis
+string.startsWith(string ichidagi soz);
+```
+
+```js copy
+let string = "JavaScript 30 kunda";
+
+console.log(string.startsWith("JavaScript")); // true
+console.log(string.startsWith("30")); // false
+console.log(string.startsWith("kunda")); // false
+
+let country = "Uzbekistan";
+
+console.log(country.startsWith("Uzb")); // true
+console.log(country.startsWith("uzb")); // false
+console.log(country.startsWith("istan")); //  false
+```
+
+#### 17. _endsWith_:
+
+Ushbu metodi argument sifatida berilgan so'zni stringni tugash so'zi bilan bir ekanligini tekshiradi, mos ravishda true yoki false qaytaradi.
+
+```js copy
+string.endsWith(string ichidagi soz);
+```
+
+```js copy
+let string = "Love is the most powerful feeling in the world";
+
+console.log(string.endsWith("world")); // true
+console.log(string.endsWith("love")); // false
+console.log(string.endsWith("in the world")); // true
+
+let country = "Uzbekistan";
+
+console.log(country.endsWith("istan")); // true
+```
+
+#### 18. _search_:
+
+U argument sifatida bir qator sozni oladi va u birinchi moslik indeksini qaytaradi. Qidiruv qiymati satr yoki oddiy ifoda namunasi bo'lishi mumkin.
+
+```js copy
+string.search(string ichidagi soz);
+```
+
+```js copy
+let string =
+  "I love JavaScript. If you do not love JavaScript what else can you love.";
+console.log(string.search("love")); // 2
+console.log(string.search(/javascript/gi)); // 7
+```
+
+#### 19. _match_:
+
+U argument sifatida qator soz yoki oddiy ifoda naqshini oladi va agar mos kelsa, massivni qaytaradi, agar bo'lmasa, null qiymatini qaytaradi. Keling, oddiy ifoda namunasi qanday ko'rinishini ko'rib chiqaylik. U / belgisi bilan boshlanadi va / belgisi bilan tugaydi.
+
+```js copy
+let string = "love";
+let patternOne = /love/; // with out any flag
+let patternTwo = /love/gi; // g-means to search in the whole text, i - case insensitive
+```
+
+Sintaksisga mos kelish
+
+```js copy
+// Sintaksis
+string.match(string ichidagi soz);
+```
+
+```js copy
+let string =
+  "I love JavaScript. If you do not love JavaScript what else can you love.";
+console.log(string.match("love"));
+```
+
+```sh
+["love", indeks: 2, console: "I love JavaScript. If you do not love JavaScript what else can you love.", groups: undefined]
+```
+
+```js copy
+let pattern = /love/gi;
+console.log(string.match(pattern)); // ["love", "love", "love"]
+```
+
+```js copy
+let txt =
+  "In 2019, I ran 30 Days of Python. Now, in 2020 I am super exited to start this challenge";
+let regEx = /\d+/;
+
+// d with escape character means d not a normal d instead acts a digit
+// + means one or more digit numbers,
+// if there is g after that it means global, search everywhere.
+
+console.log(txt.match(regEx)); // ["2", "0", "1", "9", "3", "0", "2", "0", "2", "0"]
+console.log(txt.match(/\d+/g)); // ["2019", "30", "2020"]
+```
+
+#### 20. _repeat()_:
+
+U argument sifatida raqamni oladi va satrning takroriy versiyasini qaytaradi.
+
+```js copy
+string.repeat(n);
+```
+
+```js copy
+let string = "javascript";
+console.log(string.repeat(10)); // javascript
+```
