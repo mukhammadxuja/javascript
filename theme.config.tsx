@@ -26,7 +26,7 @@ const config: DocsThemeConfig = {
       </a>
     ),
   },
-  primaryHue: 50,
+  primaryHue: 159,
   logo: (
     <span style={{ display: "flex", alignItems: "center" }}>
       <svg
